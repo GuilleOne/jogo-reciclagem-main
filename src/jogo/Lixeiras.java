@@ -67,7 +67,14 @@ public class Lixeiras implements ActionListener {
 			pontAmarelo = Jogo.pontuacao - pontAzul - pontVermelho - pontVerde;
 			pontFinal = Jogo.pontuacao;
 			Jogo.emJogo = false;
-			System.out.println("teste");
+			
+			Pontuacao pontuacao = new Pontuacao();
+			Janela.telas.add(pontuacao, "Pontuacao");
+			Janela.controleTela.show(Janela.telas, "Pontuacao");
+			
+			
+			
+			
 		} else if (cont > 5) {
 			timer.stop();
 		}
@@ -92,14 +99,7 @@ public class Lixeiras implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(Jogo.emJogo) {
 			mudarLixeira();
-		}else {
-			
-			Pontuacao pontuacao = new Pontuacao();
-			Janela.telas.add(pontuacao, "Pontuacao");
-			Janela.controleTela.show(Janela.telas, "Pontuacao");
-			
-			
-		}	
+		}
 	}
 
 	public void keyPressed(KeyEvent tecla) {

@@ -17,7 +17,7 @@ public class Menu  extends JPanel{
 	
 	 
 
-	public Menu(Janela janela) {
+	public Menu() {
 		
 		
 		// Configs botões
@@ -58,8 +58,8 @@ public class Menu  extends JPanel{
 				
 				try {
 					Jogo jogo = new Jogo();
-					janela.telas.add(jogo, "Tela Jogo");
-					janela.controleTela.show(janela.telas, "Tela Jogo");
+					Janela.telas.add(jogo, "Tela Jogo");
+					Janela.controleTela.show(Janela.telas, "Tela Jogo");
 					
 					
 					

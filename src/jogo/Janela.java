@@ -17,7 +17,7 @@ public class Janela extends JFrame {
 	private static JFrame janelaPrinc;
 	public static CardLayout controleTela = new CardLayout();
 	public static JPanel telas = new JPanel(controleTela);
-	public Menu menu = new Menu(this);
+	public Menu menu = new Menu();
 	public static int pontuacao;
 	
 	
