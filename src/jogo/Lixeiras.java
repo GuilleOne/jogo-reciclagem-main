@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
+
 import javax.swing.Timer;
 
 public class Lixeiras implements ActionListener {
@@ -17,34 +18,25 @@ public class Lixeiras implements ActionListener {
 	private ImageIcon tempimg;
 	private String material;
 	static int cont = 1;
-	private Jogo jogo;
-	private boolean fimJogo;
-	
-	private Janela janelajogo;
 	
 	private int pontAzul;
 	private int pontAmarelo;
 	private int pontVermelho;
 	private int pontVerde;
 	private int pontFinal;
-
-
+	private Janela janela;
+	
+	
 	public Lixeiras() {
 		this.x = 540;
 		this.y = 475;
-		fimJogo=false;
 		
-		
-
 		mudarLixeira();
-
 	}
 
 	public void mudarLixeira() {
-		// ImageIcon tempimg = null;
 	
-
-		Timer timer = new Timer(30000, this);
+		Timer timer = new Timer(3000, this);
 		timer.start();
 
 		if (cont == 1) {
@@ -73,39 +65,23 @@ public class Lixeiras implements ActionListener {
 			
 		} else if (cont == 5) {
 			pontAmarelo = Jogo.pontuacao - pontAzul - pontVermelho - pontVerde;
-			pontFinal = Jogo.pontuacao;;
-			fimJogo = true;
+			pontFinal = Jogo.pontuacao;
+			Jogo.emJogo = false;
 			timer.stop();
-			
 		} else {
 			timer.stop();
 		}
 		
-
-		System.out.println(Jogo.pontuacao);
 		cont++;
 		setTempImg(tempimg);
 		setImagem(tempImg.getImage());
 
 	}
 
-	public void load() {
 
-		// ImageIcon referencia = new ImageIcon("img\\lixeira1.png");
-		// imagem = referencia.getImage();
-		// imagem = getImagem();
-
-		// this.setMaterial("papel");
-
-		// altura = imagem.getHeight(null);
-		// largura = imagem.getWidth(null);
-	}
-
-	// atualizar posiçao
+	
 	public void update() {
 		x += dx;
-
-		// System.out.println(x);
 	}
 
 	public Rectangle getBounds() {
@@ -114,14 +90,15 @@ public class Lixeiras implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(fimJogo) {
-			janelajogo.getJanelaPrinc().add(new Pontuacao());
-			jogo.getPainel().setVisible(false);
-			
-		}else {
+		if(Jogo.emJogo) {
 			mudarLixeira();
-		}
-		
+		}else {
+			Pontuacao pontuacao = new Pontuacao();
+			janela.telas.add(pontuacao, "Pontuacao");
+			janela.controleTela.show(janela.telas, "Pontuacao");
+			
+			
+		}	
 	}
 
 	public void keyPressed(KeyEvent tecla) {

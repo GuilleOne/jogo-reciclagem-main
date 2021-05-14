@@ -15,12 +15,14 @@ public class Janela extends JFrame {
 	public static int largura = 1280;
 	public static int altura = 720;
 	private static JFrame janelaPrinc;
-
+	public CardLayout controleTela = new CardLayout();
+	public JPanel telas = new JPanel(controleTela);
+	public Menu menu = new Menu(this);
+	public static int pontuacao;
+	
+	
 	public Janela() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-		
-		
-		JPanel telas = new JPanel(new CardLayout());
-		
+			
 		this.setTitle("Jogo");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(0, 0, largura, altura);
@@ -31,14 +33,12 @@ public class Janela extends JFrame {
 		this.setIconImage(icone.getImage());
 		
 		
-		TelaPrincipal telaprincipal = new TelaPrincipal();
-		Menu menu = new Menu();
 		
 		
-		telas.add(menu);
-		telas.add(TelaPrincipal.teste());
 		
-	
+		
+		telas.add(menu, "Menu");
+		controleTela.show(telas, "Menu");
 		
 		this.add(telas);
 		this.setVisible(true);

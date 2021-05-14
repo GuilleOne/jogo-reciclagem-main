@@ -7,6 +7,8 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
@@ -23,6 +25,11 @@ public class Pontuacao extends JPanel implements ActionListener{
 		ImageIcon img = new ImageIcon("img\\pontuaçao.png");
 		fundo = img.getImage();
 		
+		
+		
+	
+		
+		
 	}
 
 	
@@ -38,7 +45,7 @@ public class Pontuacao extends JPanel implements ActionListener{
 		g2d.setFont(new Font("Arial",Font.BOLD,70));
 		g2d.drawString(""+lixeiras.getPontFinal(), 540, 200);
 		
-		/*
+		
 		g2d.setPaint(Color.black);//azul
 		g2d.setFont(new Font("Arial",Font.BOLD,39));
 		g2d.drawString(""+lixeiras.getPontAzul(), 270,448);
@@ -54,7 +61,7 @@ public class Pontuacao extends JPanel implements ActionListener{
 		g2d.setPaint(Color.black);//amarelo
 		g2d.setFont(new Font("Arial",Font.BOLD,39));
 		g2d.drawString(""+lixeiras.getPontAmarelo(), 920, 448);
-*/
+
 		g.dispose();
 	}
 

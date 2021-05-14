@@ -9,16 +9,17 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
+import jogo.Janela;
 
 public class Menu  extends JPanel{
 	
-	
+	 
 
-	
-
-	public Menu() {
-
+	public Menu(Janela janela) {
+		
+		
 		// Configs botões
 		ImageIcon botao = new ImageIcon("img\\botao1.png");
 		JButton bttini = new JButton(botao);
@@ -53,14 +54,21 @@ public class Menu  extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-	
-			try {
-				TelaPrincipal.teste();
-			} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 				
+				
+				try {
+					Jogo jogo = new Jogo();
+					janela.telas.add(jogo, "Tela Jogo");
+					janela.controleTela.show(janela.telas, "Tela Jogo");
+					
+					
+					
+					
+				} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+	
 			
 			}
 		});
