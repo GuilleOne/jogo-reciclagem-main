@@ -17,18 +17,13 @@ import javax.swing.Timer;
 public class Pontuacao extends JPanel implements ActionListener{
 	
 	private Image fundo;
-	private Lixeiras lixeiras;
-
-	
 	
 	public Pontuacao() {
 		ImageIcon img = new ImageIcon("img\\pontuaçao.png");
 		fundo = img.getImage();
 		
 		
-		
-	
-		
+
 		
 	}
 
@@ -43,24 +38,23 @@ public class Pontuacao extends JPanel implements ActionListener{
 		
 		g2d.setPaint(Color.black);
 		g2d.setFont(new Font("Arial",Font.BOLD,70));
-		g2d.drawString(""+lixeiras.getPontFinal(), 540, 200);
-		
+		g2d.drawString(""+ Lixeiras.pontFinal, 540, 200);
 		
 		g2d.setPaint(Color.black);//azul
 		g2d.setFont(new Font("Arial",Font.BOLD,39));
-		g2d.drawString(""+lixeiras.getPontAzul(), 270,448);
+		g2d.drawString(""+Lixeiras.pontAzul, 270,448);
 		
 		g2d.setPaint(Color.black);//vermelho
 		g2d.setFont(new Font("Arial",Font.BOLD,39));
-		g2d.drawString(""+lixeiras.getPontVermelho(), 490,448);
+		g2d.drawString(""+Lixeiras.pontVermelho, 490,448);
 		
 		g2d.setPaint(Color.black);//verde
 		g2d.setFont(new Font("Arial",Font.BOLD,39));
-		g2d.drawString(""+lixeiras.getPontVerde(), 705, 448);
+		g2d.drawString(""+Lixeiras.pontVerde, 705, 448);
 		
 		g2d.setPaint(Color.black);//amarelo
 		g2d.setFont(new Font("Arial",Font.BOLD,39));
-		g2d.drawString(""+lixeiras.getPontAmarelo(), 920, 448);
+		g2d.drawString(""+Lixeiras.pontAmarelo, 920, 448);
 
 		g.dispose();
 	}

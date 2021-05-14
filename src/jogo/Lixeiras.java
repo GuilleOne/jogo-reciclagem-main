@@ -19,12 +19,12 @@ public class Lixeiras implements ActionListener {
 	private String material;
 	static int cont = 1;
 	
-	private int pontAzul;
-	private int pontAmarelo;
-	private int pontVermelho;
-	private int pontVerde;
-	private int pontFinal;
-	private Janela janela;
+	public static int pontAzul;
+	public static int pontAmarelo;
+	public static int pontVermelho;
+	public static int pontVerde;
+	public static int pontFinal;
+	public Janela janela;
 	
 	
 	public Lixeiras() {
@@ -67,8 +67,8 @@ public class Lixeiras implements ActionListener {
 			pontAmarelo = Jogo.pontuacao - pontAzul - pontVermelho - pontVerde;
 			pontFinal = Jogo.pontuacao;
 			Jogo.emJogo = false;
-			timer.stop();
-		} else {
+			System.out.println("teste");
+		} else if (cont > 5) {
 			timer.stop();
 		}
 		
@@ -93,9 +93,10 @@ public class Lixeiras implements ActionListener {
 		if(Jogo.emJogo) {
 			mudarLixeira();
 		}else {
+			
 			Pontuacao pontuacao = new Pontuacao();
-			janela.telas.add(pontuacao, "Pontuacao");
-			janela.controleTela.show(janela.telas, "Pontuacao");
+			Janela.telas.add(pontuacao, "Pontuacao");
+			Janela.controleTela.show(Janela.telas, "Pontuacao");
 			
 			
 		}	
@@ -157,26 +158,6 @@ public class Lixeiras implements ActionListener {
 
 	public void setTempImg(ImageIcon tempImg) {
 		this.tempImg = tempImg;
-	}
-
-	public int getPontAzul() {
-		return pontAzul;
-	}
-
-	public int getPontAmarelo() {
-		return pontAmarelo;
-	}
-
-	public int getPontVermelho() {
-		return pontVermelho;
-	}
-
-	public int getPontVerde() {
-		return pontVerde;
-	}
-
-	public int getPontFinal() {
-		return pontFinal;
 	}
 
 	public static int getCont() {

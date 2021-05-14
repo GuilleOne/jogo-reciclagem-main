@@ -15,8 +15,8 @@ public class Janela extends JFrame {
 	public static int largura = 1280;
 	public static int altura = 720;
 	private static JFrame janelaPrinc;
-	public CardLayout controleTela = new CardLayout();
-	public JPanel telas = new JPanel(controleTela);
+	public static CardLayout controleTela = new CardLayout();
+	public static JPanel telas = new JPanel(controleTela);
 	public Menu menu = new Menu(this);
 	public static int pontuacao;
 	
