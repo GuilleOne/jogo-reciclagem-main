@@ -73,6 +73,10 @@ public class Menu  extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				
+				Instrucao instrucao = new Instrucao ();
+	            Janela.telas.add(instrucao, "Instrução");
+	            Janela.controleTela.show(Janela.telas, "Instrução");
 
 				
 			}

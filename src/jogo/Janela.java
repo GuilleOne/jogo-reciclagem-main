@@ -33,10 +33,6 @@ public class Janela extends JFrame {
 		this.setIconImage(icone.getImage());
 		
 		
-		
-		
-		
-		
 		telas.add(menu, "Menu");
 		controleTela.show(telas, "Menu");
 		
