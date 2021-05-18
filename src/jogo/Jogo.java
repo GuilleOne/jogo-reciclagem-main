@@ -36,7 +36,6 @@ public class Jogo extends JPanel implements ActionListener {
 		setDoubleBuffered(true);
 
 		ImageIcon img = new ImageIcon("img\\fundo2.png");
-		
 		fundo = img.getImage();
 
 		

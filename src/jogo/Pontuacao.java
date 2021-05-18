@@ -25,6 +25,7 @@ public class Pontuacao extends JPanel implements ActionListener{
 		
 
 		
+		
 	}
 
 	

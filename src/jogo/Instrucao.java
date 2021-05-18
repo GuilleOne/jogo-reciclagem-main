@@ -5,17 +5,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Instrucao extends JPanel implements ActionListener {
+public class Instrucao extends JPanel {
 
 
-	public Instrucao() {
+	public Instrucao() throws IOException {
+		BufferedImage imagem = ImageIO.read(new File("img\\instrucao.png"));
+		JLabel fundo = new JLabel(new ImageIcon(imagem));
+		//Tamanho fundo
 		
-		// coloca o foco para a janela
+		fundo.setBounds(0, 0, 1280, 720);
+		
+	
         this.addComponentListener( new ComponentAdapter() {
         	@Override
             public void componentShown( ComponentEvent e ) {
@@ -24,20 +34,17 @@ public class Instrucao extends JPanel implements ActionListener {
         });
 	
 
-		ImageIcon bttSair = new ImageIcon("img\\botaosair.png");
+		ImageIcon bttSair = new ImageIcon("img\\voltar.png");
 		JButton bttsair = new JButton(bttSair);
 
 		bttsair.setBounds(950, 600, 310, 74);
-
 		bttsair.setContentAreaFilled(false);
-
 		bttsair.setBorderPainted(true);
-
 		bttsair.setBorder(null);
 
 		this.add(bttsair);
 		this.setLayout(null);
-		
+		this.add(fundo);
 		bttsair.addActionListener(new ActionListener() {
 
 			@Override
@@ -50,9 +57,5 @@ public class Instrucao extends JPanel implements ActionListener {
 		});
 	}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

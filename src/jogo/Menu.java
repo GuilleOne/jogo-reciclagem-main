@@ -23,6 +23,7 @@ public class Menu  extends JPanel{
 		BufferedImage imagem = ImageIO.read(new File("img\\menu fundo.png"));
 		JLabel fundo = new JLabel(new ImageIcon(imagem));
 		//Tamanho fundo
+		
 		fundo.setBounds(0, 0, 1280, 720);
 		
 		
@@ -55,12 +56,14 @@ public class Menu  extends JPanel{
 		
 		
 		
-		this.add(fundo);
+		
 		this.add(bttini);
 		this.add(bttins);
 		this.add(bttsair);
 		this.setLayout(null);
 		this.setBackground(Color.gray);
+		this.add(fundo);
+		
 		
 		bttini.addActionListener(new ActionListener() {
 
@@ -72,9 +75,6 @@ public class Menu  extends JPanel{
 					Jogo jogo = new Jogo();
 					Janela.telas.add(jogo, "Tela Jogo");
 					Janela.controleTela.show(Janela.telas, "Tela Jogo");
-
-
-
 
 				} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e1) {
 					// TODO Auto-generated catch block
@@ -89,9 +89,16 @@ public class Menu  extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				Instrucao instrucao = new Instrucao ();
-				Janela.telas.add(instrucao, "Instrução");
-				Janela.controleTela.show(Janela.telas, "Instrução");
+				Instrucao instrucao;
+				try {
+					instrucao = new Instrucao ();
+					Janela.telas.add(instrucao, "Instrução");
+					Janela.controleTela.show(Janela.telas, "Instrução");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 
 
 			}

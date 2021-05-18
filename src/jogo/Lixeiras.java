@@ -36,7 +36,7 @@ public class Lixeiras implements ActionListener {
 
 	public void mudarLixeira() {
 	
-		Timer timer = new Timer(3000, this);
+		Timer timer = new Timer(5000, this);
 		timer.start();
 
 		if (cont == 1) {
