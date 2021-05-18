@@ -34,41 +34,32 @@ public class Jogo extends JPanel implements ActionListener {
 	public Jogo() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		setFocusable(true);
 		setDoubleBuffered(true);
-
 		ImageIcon img = new ImageIcon("img\\fundo2.png");
 		fundo = img.getImage();
 
-		
 		lixeiras = new Lixeiras();
 
 		addKeyListener(new TecladoAdapter());
-
 		timer = new Timer(5, this);
 		timer.start();
 
 		lixoAleatorio();
 		Som.somFundo();
 
-		// coloca o foco para a janela
-        this.addComponentListener( new ComponentAdapter() {
-        	@Override
-            public void componentShown( ComponentEvent e ) {
-                Jogo.this.requestFocusInWindow();
-            }
-        });
-	
-	
-	
-	
+		this.addComponentListener(new ComponentAdapter() {
+			@Override
+			public void componentShown(ComponentEvent e) {
+				Jogo.this.requestFocusInWindow();
+			}
+		});
 	}
 
 	public void lixoAleatorio() {
-		int coordenadas[] = new int[300];
+		int coordenadas[] = new int[400];
 		lixos = new ArrayList<Lixos>();
-
 		for (int i = 0; i < coordenadas.length; i++) {
 			int x = (int) (Math.floor(Math.random() * (1280 - 0 + 1)) + 0);
-			int y = (int) (Math.floor(Math.random() * (-20000 - 0 + 1)) + 0);
+			int y = (int) (Math.floor(Math.random() * (-25000 - 0 + 1)) + 0);
 			int tipo = (int) (Math.floor(Math.random() * (5 - 1 + 1)) + 1);
 			int img = (int) (Math.floor(Math.random() * (4 - 1 + 1)) + 1);
 			lixos.add(new Lixos(x, y, tipo, img));
@@ -77,23 +68,17 @@ public class Jogo extends JPanel implements ActionListener {
 
 	public void paint(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
-		
-			g2d.drawImage(fundo, 0, 0, null);
-			// mostrar lixeira
-			g2d.drawImage(lixeiras.getImagem(), lixeiras.getX(), lixeiras.getY(), this);
-			// mostra lixos
-			for (int o = 0; o < lixos.size(); o++) {
-				Lixos in = lixos.get(o);
-				// in.load();
-				g2d.drawImage(in.getImagem(), in.getX(), in.getY(), this);
-			}
-			g2d.setPaint(Color.blue);
-			g2d.fillRect(8, 17, 240, 30);
-
-			g2d.setPaint(Color.red);
-			g2d.setFont(new Font("Arial", Font.BOLD, 25));
-			g2d.drawString("Pontuação: " + pontuacao, 10, 40);
-		
+		g2d.drawImage(fundo, 0, 0, null);
+		g2d.drawImage(lixeiras.getImagem(), lixeiras.getX(), lixeiras.getY(), this);
+		for (int o = 0; o < lixos.size(); o++) {
+			Lixos in = lixos.get(o);
+			g2d.drawImage(in.getImagem(), in.getX(), in.getY(), this);
+		}
+		g2d.setPaint(Color.blue);
+		g2d.fillRect(8, 17, 240, 30);
+		g2d.setPaint(Color.red);
+		g2d.setFont(new Font("Arial", Font.BOLD, 25));
+		g2d.drawString("Pontuação: " + pontuacao, 10, 40);
 		g.dispose();
 	}
 
@@ -101,7 +86,6 @@ public class Jogo extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (emJogo) {
 			lixeiras.update();
-
 			for (int o = 0; o < lixos.size(); o++) {
 				Lixos in = lixos.get(o);
 				if (in.isVisivel()) {
@@ -110,13 +94,11 @@ public class Jogo extends JPanel implements ActionListener {
 					lixos.remove(o);
 				}
 			}
-
 			try {
 				colisao();
 			} catch (UnsupportedAudioFileException | IOException | LineUnavailableException e1) {
 				e1.printStackTrace();
 			}
-
 		}
 		repaint();
 	}
@@ -124,11 +106,7 @@ public class Jogo extends JPanel implements ActionListener {
 	public void colisao() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		Rectangle colLixeira = lixeiras.getBounds();
 		Rectangle colLixos;
-
 		String lixoMat;
-
-		// colisão entre o lixo e a lixaira
-
 		for (int i = 0; i < lixos.size(); i++) {
 			Lixos xLixo = lixos.get(i);
 			colLixos = xLixo.getBounds();
@@ -147,7 +125,6 @@ public class Jogo extends JPanel implements ActionListener {
 	}
 
 	private class TecladoAdapter extends KeyAdapter {
-
 		@Override
 		public void keyPressed(KeyEvent e) {
 			lixeiras.keyPressed(e);
