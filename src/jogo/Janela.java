@@ -3,7 +3,6 @@ package jogo;
 
 import java.awt.CardLayout;
 import java.io.IOException;
-
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
@@ -22,14 +21,15 @@ public class Janela extends JFrame {
 	
 	
 	public Janela() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-			
+		ImageIcon icone = new ImageIcon("img\\icone.png");
+		
 		this.setTitle("Jogo");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(0, 0, largura, altura);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		
-		ImageIcon icone = new ImageIcon("img\\icone.png");
+		
 		this.setIconImage(icone.getImage());
 		
 		
