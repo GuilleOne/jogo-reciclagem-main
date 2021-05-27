@@ -7,6 +7,10 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -15,7 +19,7 @@ public class Pontuacao extends JPanel implements ActionListener{
 	private Image fundo;
 	
 	public Pontuacao() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-		ImageIcon img = new ImageIcon(getClass().getResource("/img/pontuaï¿½ao.png"));
+		ImageIcon img = new ImageIcon(getClass().getResource("/img/pontuaçao.png"));
 		fundo = img.getImage();
 		
 	}
