@@ -35,7 +35,6 @@ public class Instrucao extends JPanel {
 
 		bttsair.setBounds(950, 600, 310, 74);
 		bttsair.setContentAreaFilled(false);
-		bttsair.setBorderPainted(true);
 		bttsair.setBorder(null);
 
 		this.add(bttsair);
@@ -46,7 +45,6 @@ public class Instrucao extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				
 	            Janela.controleTela.show(Janela.telas, "Menu");
 
 			}

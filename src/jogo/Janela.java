@@ -17,7 +17,8 @@ public class Janela extends JFrame {
 	public static int pontuacao;
 	
 	public Janela() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-			
+		ImageIcon icone = new ImageIcon("img\\icone.png");
+		
 		this.setTitle("Jogo");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setBounds(0, 0, largura, altura);

@@ -21,6 +21,10 @@ public class Menu extends JPanel {
 
 		BufferedImage imagem = ImageIO.read(this.getClass().getResourceAsStream("/img/menufundo.png"));
 		JLabel fundo = new JLabel(new ImageIcon(imagem));
+
+		
+		//Tamanho fundo
+
 		fundo.setBounds(0, 0, 1280, 720);
 
 		ImageIcon bttJogar = new ImageIcon(getClass().getResource("/img/botaoJogar.png"));
@@ -34,15 +38,12 @@ public class Menu extends JPanel {
 		bttsair.setBounds(450, 450, 310, 74);
 
 		bttsair.setContentAreaFilled(false);
-		bttsair.setBorderPainted(true);
 		bttsair.setBorder(null);
 
 		bttins.setContentAreaFilled(false);
-		bttins.setBorderPainted(true);
 		bttins.setBorder(null);
 
 		bttini.setContentAreaFilled(false);
-		bttini.setBorderPainted(true);
 		bttini.setBorder(null);
 
 		this.add(bttini);
