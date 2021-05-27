@@ -41,24 +41,24 @@ public class Lixeiras implements ActionListener {
 		timer.start();
 
 		if (cont == 1) {
-			tempimg = new ImageIcon("img\\lixeira1.png");
+			tempimg = new ImageIcon(getClass().getResource("/img/lixeira1.png"));
 			this.setMaterial("papel");
 		}
 
 		else if (cont == 2) {
-			tempimg = new ImageIcon("img\\lixeira2.png");
+			tempimg = new ImageIcon(getClass().getResource("/img/lixeira2.png"));
 			this.setMaterial("plastico");
 			pontAzul = Jogo.pontuacao;
 			timer.stop();
 
 		} else if (cont == 3) {
-			tempimg = new ImageIcon("img\\lixeira3.png");
+			tempimg = new ImageIcon(getClass().getResource("/img/lixeira3.png"));
 			this.setMaterial("vidro");
 			pontVermelho = Jogo.pontuacao - pontAzul;
 			timer.stop();
 
 		} else if (cont == 4) {
-			tempimg = new ImageIcon("img\\lixeira4.png");
+			tempimg = new ImageIcon(getClass().getResource("/img/lixeira4.png"));
 			pontVerde = Jogo.pontuacao - pontAzul - pontVermelho;
 			this.setMaterial("metal");
 			timer.stop();

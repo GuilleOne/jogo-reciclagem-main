@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.sound.sampled.LineUnavailableException;
@@ -17,14 +16,16 @@ import javax.swing.JPanel;
 public class Menu extends JPanel {
 
 	public Menu() throws IOException {
+		
+	
 
-		BufferedImage imagem = ImageIO.read(new File("img\\menu fundo.png"));
+		BufferedImage imagem = ImageIO.read(this.getClass().getResourceAsStream("/img/menufundo.png"));
 		JLabel fundo = new JLabel(new ImageIcon(imagem));
 		fundo.setBounds(0, 0, 1280, 720);
 
-		ImageIcon bttJogar = new ImageIcon("img\\botaoJogar.png");
-		ImageIcon bttInstr = new ImageIcon("img\\botaoinstucoes.png");
-		ImageIcon bttSair = new ImageIcon("img\\botaosair.png");
+		ImageIcon bttJogar = new ImageIcon(getClass().getResource("/img/botaoJogar.png"));
+		ImageIcon bttInstr = new ImageIcon(getClass().getResource("/img/botaoinstucoes.png"));
+		ImageIcon bttSair = new ImageIcon(getClass().getResource("/img/botaosair.png"));
 		JButton bttini = new JButton(bttJogar);
 		JButton bttins = new JButton(bttInstr);
 		JButton bttsair = new JButton(bttSair);

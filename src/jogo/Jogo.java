@@ -34,7 +34,8 @@ public class Jogo extends JPanel implements ActionListener {
 	public Jogo() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 		setFocusable(true);
 		setDoubleBuffered(true);
-		ImageIcon img = new ImageIcon("img\\fundo2.png");
+		
+		ImageIcon img = new ImageIcon(getClass().getResource("/img/fundo2.png"));
 		fundo = img.getImage();
 
 		lixeiras = new Lixeiras();

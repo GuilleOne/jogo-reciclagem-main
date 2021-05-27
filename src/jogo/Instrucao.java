@@ -6,9 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -19,10 +17,8 @@ public class Instrucao extends JPanel {
 
 
 	public Instrucao() throws IOException {
-		BufferedImage imagem = ImageIO.read(new File("img\\instrucao.png"));
+		BufferedImage imagem = ImageIO.read(this.getClass().getResourceAsStream("/img/instrucao.png"));
 		JLabel fundo = new JLabel(new ImageIcon(imagem));
-		//Tamanho fundo
-		
 		fundo.setBounds(0, 0, 1280, 720);
 		
 	
@@ -34,7 +30,7 @@ public class Instrucao extends JPanel {
         });
 	
 
-		ImageIcon bttSair = new ImageIcon("img\\voltar.png");
+		ImageIcon bttSair = new ImageIcon(getClass().getResource("/img/voltar.png"));
 		JButton bttsair = new JButton(bttSair);
 
 		bttsair.setBounds(950, 600, 310, 74);

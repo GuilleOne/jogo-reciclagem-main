@@ -28,80 +28,80 @@ public class Lixos {
 		if (tipo == 1) {
 			setMaterial("papel");
 			if (img == 1) {
-				templixo = new ImageIcon("img\\papel\\papel1.png");
+				templixo = new ImageIcon(getClass().getResource("/img/papel/papel1.png"));
 			}
 			if (img == 2) {
-				templixo = new ImageIcon("img\\papel\\papel2.png");
+				templixo = new ImageIcon(getClass().getResource("/img/papel/papel2.png"));
 			}
 			if (img == 3) {
-				templixo = new ImageIcon("img\\papel\\papel3.png");
+				templixo = new ImageIcon(getClass().getResource("/img/papel/papel3.png"));
 			}
 			if (img == 4) {
-				templixo = new ImageIcon("img\\papel\\papel4.png");
+				templixo = new ImageIcon(getClass().getResource("/img/papel/papel4.png"));
 			}
 		}
 
 		if (tipo == 2) {
 			setMaterial("metal");
 			if (img == 1) {
-				templixo = new ImageIcon("img\\metal\\metal1.png");
+				templixo = new ImageIcon(getClass().getResource("/img/metal/metal1.png"));
 			}
 			if (img == 2) {
-				templixo = new ImageIcon("img\\metal\\metal2.png");
+				templixo = new ImageIcon(getClass().getResource("/img/metal/metal2.png"));
 			}
 			if (img == 3) {
-				templixo = new ImageIcon("img\\metal\\metal3.png");
+				templixo = new ImageIcon(getClass().getResource("/img/metal/metal3.png"));
 			}
 			if (img == 4) {
-				templixo = new ImageIcon("img\\metal\\metal4.png");
+				templixo = new ImageIcon(getClass().getResource("/img/metal/metal4.png"));
 			}
 		}
 
 		if (tipo == 3) {
 			setMaterial("plastico");
 			if (img == 1) {
-				templixo = new ImageIcon("img\\plastico\\plastico1.png");
+				templixo = new ImageIcon(getClass().getResource("/img/plastico/plastico1.png"));
 			}
 			if (img == 2) {
-				templixo = new ImageIcon("img\\plastico\\plastico2.png");
+				templixo = new ImageIcon(getClass().getResource("/img/plastico/plastico2.png"));
 			}
 			if (img == 3) {
-				templixo = new ImageIcon("img\\plastico\\plastico3.png");
+				templixo = new ImageIcon(getClass().getResource("/img/plastico/plastico3.png"));
 			}
 			if (img == 4) {
-				templixo = new ImageIcon("img\\plastico\\plastico4.png");
+				templixo = new ImageIcon(getClass().getResource("/img/plastico/plastico4.png"));
 			}
 		}
 
 		if (tipo == 4) {
 			setMaterial("vidro");
 			if (img == 1) {
-				templixo = new ImageIcon("img\\vidro\\vidro1.png");
+				templixo = new ImageIcon(getClass().getResource("/img/vidro/vidro1.png"));
 			}
 			if (img == 2) {
-				templixo = new ImageIcon("img\\vidro\\vidro2.png");
+				templixo = new ImageIcon(getClass().getResource("/img/vidro/vidro2.png"));
 			}
 			if (img == 3) {
-				templixo = new ImageIcon("img\\vidro\\vidro3.png");
+				templixo = new ImageIcon(getClass().getResource("/img/vidro/vidro3.png"));
 			}
 			if (img == 4) {
-				templixo = new ImageIcon("img\\vidro\\vidro4.png");
+				templixo = new ImageIcon(getClass().getResource("/img/vidro/vidro4.png"));
 			}
 		}
 
 		if (tipo == 5) {
 			setMaterial("naoreciclavel");
 			if (img == 1) {
-				templixo = new ImageIcon("img\\naoreciclavel\\naoreciclavel1.png");
+				templixo = new ImageIcon(getClass().getResource("/img/naoreciclavel/naoreciclavel1.png"));
 			}
 			if (img == 2) {
-				templixo = new ImageIcon("img\\naoreciclavel\\naoreciclavel2.png");
+				templixo = new ImageIcon(getClass().getResource("/img/naoreciclavel/naoreciclavel2.png"));
 			}
 			if (img == 3) {
-				templixo = new ImageIcon("img\\naoreciclavel\\naoreciclavel3.png");
+				templixo = new ImageIcon(getClass().getResource("/img/naoreciclavel/naoreciclavel3.png"));
 			}
 			if (img == 4) {
-				templixo = new ImageIcon("img\\naoreciclavel\\naoreciclavel4.png");
+				templixo = new ImageIcon(getClass().getResource("/img/naoreciclavel/naoreciclavel4.png"));
 			}
 		}
 		setImglixo(templixo);

@@ -23,7 +23,7 @@ public class Janela extends JFrame {
 		this.setBounds(0, 0, largura, altura);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		ImageIcon icone = new ImageIcon("img\\icone.png");
+		ImageIcon icone = new ImageIcon(getClass().getResource("/img/icone.png"));
 		this.setIconImage(icone.getImage());
 	
 		telas.add(menu, "Menu");

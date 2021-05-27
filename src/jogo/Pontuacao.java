@@ -22,7 +22,7 @@ public class Pontuacao extends JPanel {
 	private Image fundo;
 	
 	public Pontuacao() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-		ImageIcon img = new ImageIcon("img\\pontuaçao.png");
+		ImageIcon img = new ImageIcon(getClass().getResource("/img/pontuaçao.png"));
 		fundo = img.getImage();
 		Som.somFinal();
 	}
