@@ -17,14 +17,10 @@ public class Menu extends JPanel {
 
 	public Menu() throws IOException {
 		
-	
-
 		BufferedImage imagem = ImageIO.read(this.getClass().getResourceAsStream("/img/menufundo.png"));
 		JLabel fundo = new JLabel(new ImageIcon(imagem));
 
-		
 		//Tamanho fundo
-
 		fundo.setBounds(0, 0, 1280, 720);
 
 		ImageIcon bttJogar = new ImageIcon(getClass().getResource("/img/botaoJogar.png"));
